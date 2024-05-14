@@ -1,0 +1,251 @@
+{% extends "websiteapp/layouts/main.html" %}
+ {% load static %}
+  {% block content%}
+
+<div class="content">
+  <h1>24TECH EVENTS</h1>
+
+  <p>Plan Your Events With Us</p>
+</div>
+
+<section id="about">
+  <div class="tittle-text">
+    <p>ABOUT</p>
+    <h1>Discover Our Journey</h1>
+  </div>
+  <div class="about-box">
+    <div class="about">
+      <h1>24 Tech Events</h1>
+      <div class="about-desc">
+        <div class="about-icon"></div>
+        <div class="about-text">
+          <p>
+            24 Tech Events established in 2020, is a premier event management
+            company specializing in various domains. Their mastery lies in
+            traditional event management, infusing cultural richness into every
+            occasion. For weddings, they orchestrate unforgettable experiences,
+            crafting moments of love and joy. In the realm of conferences, they
+            excel in facilitating seamless and impactful professional
+            gatherings. Additionally, their expertise extends to sports events,
+            ensuring thrilling and well-coordinated athletic spectacles that
+            captivate audiences. Their commitment to excellence and precision
+            elevates every event, making them a go-to choice for diverse and
+            memorable occasions
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="{% static 'Images/aboutt.jpg' %}" alt="about image" />
+    </div>
+  </div>
+</section>
+
+<!--Service-->
+
+<section id="service">
+  <div class="tittle-text">
+    <p>PRODUCTS & SERVICES</p>
+    <h1>We Provide Better</h1>
+  </div>
+  <div class="service-box">
+    <div class="single-service">
+      <img src="{% static 'Images/djpic.jpg' %}" alt="single-service image" />
+      <div class="overlay"></div>
+      <div class="service-desc">
+        <h3> Catering & DJ
+            Management</h3>
+        <hr />
+        <p>At 24 Tech Events, we offer comprehensive event services, including photography, catering, and DJ entertainment. Our talented photographers capture every special moment, ensuring your memories are preserved beautifully. Our experienced caterers craft delicious menus tailored to your preferences, while our dynamic DJs keep the party going with the perfect mix of music. With 24 Tech Events, you can relax and enjoy your event while we take care of everything to perfection.</p>
+      </div>
+    </div>
+    <div class="single-service">
+      <img src="{% static 'Images/pic 2.jpg' %}" alt="single-service image" />
+      <div class="overlay"></div>
+      <div class="service-desc">
+        <h3>Wedding Event Management</h3>
+        <hr />
+        <p>
+          At 24 Tech Events, we love creating amazing weddings that reflect your
+          style and dreams. Our team takes care of everything from finding the
+          perfect venue to making sure every little detail is just right. With
+          us by your side, you can relax and enjoy your special day while we
+          make it truly magical. Trust 24 Tech Events to turn your wedding
+          dreams into unforgettable memories.
+        </p>
+      </div>
+    </div>
+    <div class="single-service">
+      <img src="{% static 'Images/pic 3.jpg' %}" alt="single-service image" />
+      <div class="overlay"></div>
+      <div class="service-desc">
+        <h3>Corporate Events</h3>
+        <hr />
+        <p>
+          At 24 Tech Events, we excel at creating impactful corporate events
+          that align with your company's goals. From dynamic conferences to
+          engaging team-building activities, we handle every aspect with
+          precision and creativity. Trust us to deliver exceptional events that
+          leave a lasting impression on your clients and employees alike.
+        </p>
+      </div>
+    </div>
+
+    <div class="single-service">
+      <img src="{% static 'Images/bdayf1.jpg' %}" alt="single-service image" />
+      <div class="overlay"></div>
+      <div class="service-desc">
+        <h3>Birthday Events  Management</h3>
+        <hr />
+        <p>At 24 Tech Events, we're experts at making birthday celebrations truly special. Whether it's a milestone birthday, a themed party, or an intimate gathering, we handle every detail with care and creativity. From venue selection to personalized decorations and entertainment, we ensure your loved one's birthday is unforgettable. Trust us to bring your vision to life and create cherished memories for years to come.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Booking-->
+
+<section id="booking">
+  <div class="tittle-text">
+    <p>BOOKING</p>
+    <h1>Book Your Event</h1>
+  </div>
+  <div class="contact" id="contact">
+    <div class="contact-box">
+      <div class="contact-image">
+        <img src="{% static 'Images/contactpic.jpg' %}" alt="single-service image" />
+      </div>
+    </div>
+    <div class="contact-box">
+      <div class="contact-body">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <h2>Plan Your Event With Us</h2>
+          <div class="form-content">
+            <input type="text" name="name-inputid" required />
+            <label>UserName</label>
+          </div>
+          <div class="form-content">
+            <input type="number" name="mobile-inputid" required />
+            <label>Mobile number</label>
+          </div>
+          <div class="form-content">
+            <input type="text" name="email-inputid" required />
+            <label>E-Mail</label>
+          </div>
+          <div class="form-content">
+            <select
+              class="form-select"
+              name="eventid"
+              aria-label="Default select example"
+            >
+              <option selected>Event Type</option>
+              <option value="Marriage">Marriage</option>
+              <option value="Engagement">Engagement</option>
+              <option value="Baby Showering">Baby Showering</option>
+              <option value="Birthday Party">Birthday Party</option>
+              <option value="Sangeet">Sangeet</option>
+              <option value="Recption">Recption</option>
+              <option value="Corprate Events">Corprate Events</option>
+              <option value="DJ & FasionShow">DJ & FasionShow</option>
+              <option value="School & Collage Events">School & Collage Events</option>
+              <option value="Others..">Others...</option>
+            </select>
+          </div>
+          <div class="form-content">
+            <input type="number" name="attendees-inputid" required />
+            <label>No. Of Attendees</label>
+          </div>
+          <div class="form-content">
+            <input type="date" name="date-inputid" required />
+            {% comment %} <label>Date Of The Event</label> {% endcomment %}
+          </div>
+          <div class="form-content">
+            <input type="text" name="location-inputid" required />
+            <label>Location Of The Event</label>
+          </div>
+          <button type="submit">Book Now !</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Testimonial-->
+
+<section id="testimonial">
+  <div class="tittle-text">
+    <p>TESTIMONIAL</p>
+    <h1>What Client Says</h1>
+  </div>
+  <div class="testimonial-row">
+    <div class="testimonial-col">
+      <div class="user">
+        <img src="{% static 'Images/img-1.jpg' %}" />
+        <div class="user-info">
+          <h4>ARSATH</h4>
+          <small>@__arsath__ahamed__</small>
+        </div>
+      </div>
+      <p>
+        Good for value decors handled by a professional team. Job well done
+        kudos
+      </p>
+    </div>
+    <div class="testimonial-col">
+      <div class="user">
+        <img src="{% static 'Images/img-2.jpg' %}" />
+        <div class="user-info">
+          <h4>AFSAL</h4>
+          <small>@__.affssal.__</small>
+        </div>
+      </div>
+      <p>Excellent work Perfect finishing on time Good team work😍🥰</p>
+    </div>
+    <div class="testimonial-col">
+      <div class="user">
+        <img src="{% static 'Images/img-3.jpg' %}" />
+        <div class="user-info">
+          <h4>IJAS</h4>
+          <small>@ijas.___</small>
+        </div>
+      </div>
+      <p>
+        Best cost and worthy outcome and very innovative ideas we are looking
+        for new branches of 24 tech events 🥳♥️
+      </p>
+    </div>
+  </div>
+</section>
+
+<!--footer-->
+<section id="footer">
+  <div class="tittle-text">
+    <p>CONTACT</p>
+    <h1>Contact us</h1>
+  </div>
+
+  <div class="footer">
+    <div class="footer-row">
+      <div class="footer-left">
+        <h1>Get In Touch</h1>
+        <p>
+          Address : No.207, 2nd Floor, Balaj Complex, Gopalapuram, 1st Street,
+          Coimbatore, Tamil Nadu 641008
+        </p>
+        <p>Mail : 24techevents@gmail.com</p>
+        <p>Contact : +91 9360674630</p>
+      </div>
+    </div>
+
+    <div class="footer-box">
+      <div class="copyrights">
+        <label>Copyrights &copy; 2023</label>
+      </div>
+      <div class="brand">
+        <label> 24TECH<span>EVENTS</span> </label>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

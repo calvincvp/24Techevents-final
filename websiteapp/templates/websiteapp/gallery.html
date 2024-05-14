@@ -1,0 +1,42 @@
+{% extends "websiteapp/layouts/main.html" %}
+{% block content %}
+<section id="gallerytopnav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top"  style= "font-family: 'Poppins', sans-serif;
+    background-color:#862f2f;">
+        <div class="container">
+          <a class="navbar-brand"href="/#">24TechEvents</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link active" aria-current="page" href="/#">Home</a>
+              <a class="nav-link" href="/#about">About</a>
+              <a class="nav-link" href="/#service">Services</a>
+              <a class="nav-link" href="/#booking">Booking</a>
+              <a class="nav-link" href="/#testimonial">Testimonial</a>
+              <a class="nav-link" href="/#footer">ContactUs</a>
+           
+              
+            </div>
+          </div>
+        </div>
+      </nav> 
+</section>
+<section id="Gallery">
+    <div class="tittle-text">
+
+        <p>GALLERY</p>
+        <h1>Our Works</h1>
+
+
+
+        {% for item in gallery %}
+        <div class="gallery-image">
+            <img  style="max-width:700px" src ="{{item.image.url}}"  alt="Gallery">
+            <h5 class ="gallery-title text-primary">{{item.name}}</h5>
+        </div>
+        {% endfor %} 
+
+    </div>
+{% endblock content %}
